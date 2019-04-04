@@ -1,5 +1,3 @@
-// CODE here for your Lambda Classes
-
 class Person {
   constructor(personAttributes) {
     this.name = personAttributes.name;
@@ -82,4 +80,50 @@ const fred = new Instructor({
   catchPhrase: `Don't forget the homies`
 });
 
+const sarah = new Instructor({
+  name: 'Sarah',
+  location: 'Boston',
+  age: 27,
+  gender: 'female',
+  favLanguage: 'Ruby',
+  specialty: 'Back-end',
+  catchPhrase: `Algos for days`
+});
+
+const jimbob = new Student({
+  name: 'Jim Bob',
+  location: 'Santa Fe',
+  age: 29,
+  gender: 'male',
+  favLanguage: 'Elixir',
+  specialty: 'Back-end',
+  previousBackground: 'Barista',
+  className: 'CS20',
+  favSubjects: ['Data Structures', 'Algorithms', 'Functional Programming']
+});
+
+const kayla = new ProjectManager({
+  name: 'Kayla',
+  location: 'Seattle',
+  age: 32,
+  gender: 'female',
+  favLanguage: 'Clojure',
+  specialty: 'Back-end',
+  catchPhrase: 'I love logic!',
+  gradClassName: 'CS1',
+  favInstructor: 'Josh'
+});
+
+
 console.log(fred);
+
+console.log(sarah.demo('ruby'));
+console.log(sarah.grade(jimbob, 'ruby'));
+
+console.log(jimbob.listsSubjects(jimbob.favSubjects));
+console.log(jimbob.PRAssignment('JavaScript IV'));
+console.log(jimbob.sprintChallenge('JavaScript Fundamentals'));
+
+console.log(kayla)
+console.log(kayla.standUp('Pizza'));
+console.log(kayla.debugsCode(jimbob, 'closure'));
