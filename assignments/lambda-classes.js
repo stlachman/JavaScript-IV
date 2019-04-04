@@ -102,6 +102,19 @@ const jimbob = new Student({
   favSubjects: ['Data Structures', 'Algorithms', 'Functional Programming']
 });
 
+
+const jenn = new Student({
+  name: 'Jenn',
+  location: 'Lancaster',
+  age: 24,
+  gender: 'female',
+  favLanguage: 'Python',
+  specialty: 'Front End',
+  previousBackground: 'Hospitality',
+  className: 'WEB18',
+  favSubjects: ['HTML', 'CSS', 'Semantic HTML']
+});
+
 const kayla = new ProjectManager({
   name: 'Kayla',
   location: 'Seattle',
@@ -115,15 +128,40 @@ const kayla = new ProjectManager({
 });
 
 
+const laura = new ProjectManager({
+  name: 'Laura',
+  location: 'Madison',
+  age: 40,
+  gender: 'female',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: 'I love User Interface!',
+  gradClassName: 'CS4',
+  favInstructor: 'Ryan'
+});
+
+// Instructors
 console.log(fred);
 
 console.log(sarah.demo('ruby'));
 console.log(sarah.grade(jimbob, 'ruby'));
 
+
+// Students
 console.log(jimbob.listsSubjects(jimbob.favSubjects));
 console.log(jimbob.PRAssignment('JavaScript IV'));
 console.log(jimbob.sprintChallenge('JavaScript Fundamentals'));
 
+console.log(jenn.listsSubjects(jenn.favSubjects));
+console.log(jenn.PRAssignment('Responsive Web Design'));
+console.log(jenn.sprintChallenge('Advanced CSS'));
+
+
+// Project Managers
 console.log(kayla)
 console.log(kayla.standUp('Pizza'));
 console.log(kayla.debugsCode(jimbob, 'closure'));
+
+console.log(laura)
+console.log(laura.standUp('Web 18'));
+console.log(laura.debugsCode(jenn, 'scope'));
