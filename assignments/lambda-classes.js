@@ -26,6 +26,10 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`);
   }
+
+  gradeAssignment(student) {
+    student.grade += Math.floor(Math.random() * 10);
+  }
   
 }
 
@@ -35,6 +39,7 @@ class Student extends Person {
     this.previousBackground = studentAttributes.previousBackground;
     this.className = studentAttributes.className;
     this.favSubjects = studentAttributes.favSubjects;
+    this.grade = studentAttributes.grade;
   }
 
   listsSubjects(favSubjects) {
@@ -99,7 +104,8 @@ const jimbob = new Student({
   specialty: 'Back-end',
   previousBackground: 'Barista',
   className: 'CS20',
-  favSubjects: ['Data Structures', 'Algorithms', 'Functional Programming']
+  favSubjects: ['Data Structures', 'Algorithms', 'Functional Programming'],
+  grade: 75
 });
 
 
@@ -112,7 +118,8 @@ const jenn = new Student({
   specialty: 'Front End',
   previousBackground: 'Hospitality',
   className: 'WEB18',
-  favSubjects: ['HTML', 'CSS', 'Semantic HTML']
+  favSubjects: ['HTML', 'CSS', 'Semantic HTML'],
+  grade: 80
 });
 
 const kayla = new ProjectManager({
@@ -144,13 +151,17 @@ const laura = new ProjectManager({
 console.log(fred);
 
 console.log(sarah.demo('ruby'));
-console.log(sarah.grade(jimbob, 'ruby'));
+// console.log(sarah.grade(jimbob, 'ruby'));
 
+console.log(sarah.gradeAssignment(jimbob));
+
+console.log(jimbob.grade);
 
 // Students
 console.log(jimbob.listsSubjects(jimbob.favSubjects));
 console.log(jimbob.PRAssignment('JavaScript IV'));
 console.log(jimbob.sprintChallenge('JavaScript Fundamentals'));
+
 
 console.log(jenn.listsSubjects(jenn.favSubjects));
 console.log(jenn.PRAssignment('Responsive Web Design'));
@@ -161,6 +172,9 @@ console.log(jenn.sprintChallenge('Advanced CSS'));
 console.log(kayla)
 console.log(kayla.standUp('Pizza'));
 console.log(kayla.debugsCode(jimbob, 'closure'));
+
+console.log(kayla.gradeAssignment(jenn));
+console.log(jenn.grade)
 
 console.log(laura)
 console.log(laura.standUp('Web 18'));
