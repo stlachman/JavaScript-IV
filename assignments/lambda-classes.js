@@ -46,9 +46,9 @@ class Student extends Person {
 		this.grade = studentAttributes.grade;
 	}
 
-	listsSubjects(favSubjects) {
-		for (let i = 0; i < favSubjects.length; i++) {
-			console.log(favSubjects[i]);
+	listsSubjects() {
+		for (let i = 0; i < this.favSubjects.length; i++) {
+			console.log(this.favSubjects[i]);
 		}
 	}
 
@@ -168,11 +168,11 @@ sarah.gradeAssignment(jimbob);
 console.log(jimbob.grade);
 
 // Students
-jimbob.listsSubjects(jimbob.favSubjects);
+jimbob.listsSubjects();
 console.log(jimbob.PRAssignment('JavaScript IV'));
 console.log(jimbob.sprintChallenge('JavaScript Fundamentals'));
 
-jenn.listsSubjects(jenn.favSubjects);
+jenn.listsSubjects();
 console.log(jenn.PRAssignment('Responsive Web Design'));
 console.log(jenn.sprintChallenge('Advanced CSS'));
 
