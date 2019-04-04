@@ -28,7 +28,12 @@ class Instructor extends Person {
   }
 
   gradeAssignment(student) {
-    student.grade += Math.floor(Math.random() * 10);
+    const randomizer = Math.random() < 0.5 ? "Negative" : "Positive";
+    if (randomizer === "Positive") {
+      student.grade += Math.floor(Math.random() * 10);
+    } else {
+      student.grade -= Math.floor(Math.random() * 10);
+    } 
   }
   
 }
@@ -54,6 +59,14 @@ class Student extends Person {
 
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`)
+  }
+
+  graduate() {
+    if (this.grade > 70) {
+      return `${this.name} is ready to graduate!`;
+    } else {
+      return `${this.name} needs to pass a few more assignments to graduate.`;
+    }
   }
 
 }
@@ -154,6 +167,9 @@ console.log(sarah.demo('ruby'));
 // console.log(sarah.grade(jimbob, 'ruby'));
 
 console.log(sarah.gradeAssignment(jimbob));
+console.log(jimbob.grade);
+
+console.log(sarah.gradeAssignment(jimbob));
 
 console.log(jimbob.grade);
 
@@ -175,6 +191,14 @@ console.log(kayla.debugsCode(jimbob, 'closure'));
 
 console.log(kayla.gradeAssignment(jenn));
 console.log(jenn.grade)
+
+console.log(kayla.gradeAssignment(jenn));
+console.log(jenn.grade)
+
+console.log(kayla.gradeAssignment(jenn));
+console.log(jenn.grade)
+
+console.log(jenn.graduate());
 
 console.log(laura)
 console.log(laura.standUp('Web 18'));
